@@ -41,31 +41,9 @@ class Courbe:
 
         self.tracer_courbe()
 
-        # Calcul des surfaces en bleu et en vert
-        surface_bleue, surface_verte = self.calculer_surfaces()
-        print("Surface en bleu:", surface_bleue)
-        print("Surface en vert:", surface_verte)
-
         plt.show()
-
-    def calculer_surfaces(self):
-        dx = (self.fin - self.debut) / self.nbr_points
-        surface_bleue = 0
-        surface_verte = 0
-
-        for i in range(self.nbr_points):
-            x = self.debut + i * dx
-            y = self.__f(x) + 0.5
-
-            if y > 0.5:
-                surface_bleue += min(self.__f(x + dx) + 0.5 - 0.5, dx)
-            else:
-                surface_verte += min(0.5 - (self.__f(x + dx) + 0.5), dx)
-
-        return surface_bleue, surface_verte
 
 
 # Exemple d'utilisation
 courbe = Courbe(0, 1)
 courbe.generer_points()
-

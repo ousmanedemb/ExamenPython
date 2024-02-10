@@ -35,9 +35,7 @@ surface_verte = 0
 for x, y in zip(x_points, y_points):
     if y > f(x) + 0.5:
         plt.plot(x, y, 'b+', markersize=5)
-        surface_bleue += min(f(x + 1.0) + 0.5 - 0.5, 1.0)
     else:
         plt.plot(x, y, 'go', markersize=5)
-        surface_verte += min(0.5 - (f(x + 1.0) + 0.5), 1.0)
 
 plt.show()
