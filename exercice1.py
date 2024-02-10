@@ -29,9 +29,7 @@ plt.plot([0, 1, 1, 0, 0], [0, 0, 1, 1, 0], color='black')
 x_points = np.random.uniform(debut, fin, nbr_points)
 y_points = np.random.uniform(0, f(fin), nbr_points)
 
-# Tracé des points et calcul des surfaces
-surface_bleue = 0
-surface_verte = 0
+# Tracé des points
 for x, y in zip(x_points, y_points):
     if y > f(x) + 0.5:
         plt.plot(x, y, 'b+', markersize=5)
